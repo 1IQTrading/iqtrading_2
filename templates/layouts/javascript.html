@@ -1,0 +1,53 @@
+{% load static %}
+
+<!-- jquery latest version -->
+    <script src="{% static 'js/vendor/jquery-2.2.4.min.js' %}"></script>
+    <!-- popper.min.js -->
+    <script src="{% static 'js/vendor/popper.min.js' %}"></script>
+    <!-- bootstrap js -->
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <!-- owl.carousel.2.0.0-beta.2.4 css -->
+    <script src="{% static 'js/owl.carousel.min.js' %}"></script>
+    <!-- swiper.min.js -->
+    <script src="{% static 'js/swiper.min.js' %}"></script>
+    <!-- mailchimp.js -->
+    <script src="{% static 'js/mailchimp.js' %}"></script>
+    <!-- plugins js -->
+    <script src="{% static 'js/jquery.canvasjs.min.js' %}"></script>
+    <!-- metisMenu.min.js -->
+    <script src="{% static 'js/metisMenu.min.js' %}"></script>
+    <!-- plugins js -->
+    <script src="{% static 'js/plugins.js' %}"></script>
+        <script>
+            // chart
+    window.onload = function () {
+    var limit = 10000;    //increase number of dataPoints by increasing the limit
+    var y = 100;
+    var data = [];
+    var dataSeries = { type: "line" };
+    var dataPoints = [];
+    for (var i = 0; i < limit; i += 1) {
+        y += Math.round(Math.random() * 10 - 5);
+        dataPoints.push({
+            x: i,
+            y: y
+        });
+    }
+    dataSeries.dataPoints = dataPoints;
+    data.push(dataSeries);
+
+    //Better to construct options first and then pass it as a parameter
+    var options = {
+        zoomEnabled: true,
+        animationEnabled: true,
+        axisY: {
+            includeZero: false
+        },
+        data: data  // random data
+    };
+
+        $("#chartContainer").CanvasJSChart(options);
+    }
+    </script>
+    <!-- main js -->
+    <script src="{% static 'js/scripts.js' %}"></script>
