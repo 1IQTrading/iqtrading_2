@@ -66,12 +66,33 @@
                                 </ul>
                             </li>
                             <li><a href="/home/contact">contact</a></li>
-                             <li><li><a href="/accounts/sign_in">Sign in</a>
+                             <li><li><a href="/accounts/sign_in">Sign in </a>
+
+
+
+                                    </a>
+
+
+
                                 <ul>
-                                    <li><a href="/accounts/sign_in">Sign in</a></li>
-                                    <li><a href="/accounts/sign_up">Sign up</a></li>
+                                    {%  if not user.is_authenticated %}
+                                        <li><a href="/accounts/sign_in">Sign in</a></li>
+                                        <li><a href="/accounts/sign_up">Sign up</a></li>
+                                    {% else %}
+                                        <li><a href="/accounts/sign_out">sign_out</a></li>
+                                        <li><a href="/accounts/profile">profile</a></li>
+
+                                    {% endif %}
                                 </ul>
                              </li>
+                                <li> <a href=""> USER:
+                                    {% if user.is_authenticated %}
+                                        {{ user.username }}
+                                    {% else %}
+                                        Guest
+                                    {% endif %}
+                                    !
+                                </a> </li>
                         </ul>
 
                     </div>
