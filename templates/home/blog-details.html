@@ -28,6 +28,8 @@
     </div>
     <!-- breadcumb-area end -->
 
+    {% csrf_token %}
+
     <!-- blog-details-area start -->
     <div class="blog-details-area">
         <div class="container">
@@ -35,15 +37,13 @@
                 <div class="col-12">
                     <div class="blog-details-wrap">
                         <img src="assets/images//blog/blog-details.jpg" alt="">
-                        <h3>Digital Marketo Moved To Their Office</h3>
+                        <h3>{{ post.name }}</h3>
                         <ul>
-                            <li><a href="#">2 May, 2017</a></li>
+                            <li><a href="#">{{ post.published }}</a></li>
                             <li><a href="#">Latest News</a></li>
                         </ul>
-                        <p>There are many variations of passages of the Lorem Ipsum available, but the majority the have suffered alteration in some form.There are many variations available.There are many variations of the of passages of the Lorem Ipsum available, but the majority the have suffered alteration in some form.There are many variations available.There are many variations of passages of the Lorem Ipsum othe available, but the majority the have suffered alteration in some form.There are many variations available.There are many variations of passages of the Lorem Ipsum available, but the majority the out have suffered alteration in some form.There are many variations available. Ther</p>
-                        <p>There are many variations of passages of the Lorem Ipsum available, but the majority the have suffered alteration in some form.There are many variations available.There are many variations of the of passages of the Lorem Ipsum available, but the majority the have suffered alteration in some form.There are many var.</p>
-                        <blockquote>There are many variations of passages of the Lorem Ipsum available, but the majority the have suffered alteration in some about form.There are many variations available.There are many variations available.There are many variations of passages of the that Lorem Ipsum the have suffered alteration in some form. <i class="fa fa-quote-right"></i></blockquote>
-                        <p>There are many variations of passages of the Lorem Ipsum available, but the majority the have suffered alteration in some form.There are many variations available.There are many variations of the of passages of the Lorem Ipsum available, but the majority the have suffered alteration in some form.There are many variations available.</p>
+                        <p>{{ post.content }}</p>
+
                         <div class="row">
                             <div class="col-lg-6">
                                 <ul class="mb-0 mb-20">
