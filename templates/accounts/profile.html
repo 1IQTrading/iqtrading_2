@@ -1,4 +1,4 @@
-{%  extends 'layouts/base.html' %}
+{% extends 'layouts/base.html' %}
 
 {% block title %}{{ title }}{% endblock title %}
 
@@ -8,6 +8,10 @@
     <h2>{{ title }}</h2>
     <hr>
     <h4>Пользователь: {{ user.username }}</h4>
+    <h4>Firs name: {{ user.first_name }}</h4>
+    <h4>Last name: {{ user.last_name }}</h4>
+    <h4>Group: {{ user.groups }}</h4>
+    <h4>E-mail: {{ user.email }}</h4>
     <hr>
     <hr>
 </div>
