@@ -75,6 +75,8 @@ def sign_out(request):
 def profile(request):
     data = dict()
     data['title'] = 'Профиль пользователя'
+    data['groups'] = request.user.groups.all()
+
     return render(request, 'accounts/profile.html', context=data)
 
 def ajax_reg(request):
