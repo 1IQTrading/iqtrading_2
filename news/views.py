@@ -65,12 +65,13 @@ def edit(request, post_id):
         form2 = PostForm2(request.POST)
         # print('==', form2)
         if form2.is_valid():
-
+            # ('name', 'category', 'about', 'published', 'content', 'image', 'source')
             post.name = form2.cleaned_data['name']
-            # post.description = form2.cleaned_data['category']
-            post.genre = form2.cleaned_data['about']
-            post.media = form2.cleaned_data['content']
-            post.status = form2.cleaned_data['source']
+            post.category = form2.cleaned_data['category']
+            post.about = form2.cleaned_data['about']
+            post.published = form2.cleaned_data['published']
+            post.content = form2.cleaned_data['content']
+            post.source = form2.cleaned_data['source']
 
             post.save()
             # update ?
